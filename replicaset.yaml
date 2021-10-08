@@ -1,4 +1,4 @@
-apiVersion: app/v1
+apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: helloworld-controller
@@ -9,3 +9,14 @@ spec:
   selector:
     matchLabels:
       app: helloworld
+  template:
+    metadata:
+      name: podnew
+      labels:
+        app: helloworld
+    spec:
+      containers:
+      - name: sampleapp
+        image: arjunachari12/k8s-demo
+        ports:
+        - containerPort: 3000
