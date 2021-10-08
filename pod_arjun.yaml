@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: Pod with Arjun's image
+spec:
+  containers:
+  - name: sample App
+    image: arjunachari12/k8s-demo
+    
