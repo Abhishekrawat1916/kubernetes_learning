@@ -1,9 +1,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: Pod with Arjun's image
+  name: poda
 spec:
   containers:
-  - name: sample App
+  - name: sampleapp
     image: arjunachari12/k8s-demo
-    
+    ports:
+    - containerPort: 80
+
