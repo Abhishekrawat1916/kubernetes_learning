@@ -1,0 +1,24 @@
+apiVersion : apps/v1
+kind: ReplicaSet
+metadata:
+  name: flask-py-replicas
+  labels:
+    app: flaskpylabel
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: flaskpylabel
+  template:
+    metadata:
+      name: podnew
+      labels:
+        app: flaskpylabel
+    spec:
+      containers:
+      - name: flaskapp
+        image: docker pull aikanshp/python-docker-repo
+        ports:
+        - containerPort: 5000
+
+
