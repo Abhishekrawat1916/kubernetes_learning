@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: py-deploy
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: helloworld
+  template:
+    metadata:
+      name: pypod
+      labels:
+        app: helloworld
+    spec:
+      containers:
+      - name: pydevdep
+        image: codezamasu/python-docker	
+        ports:
+        - containerPort: 5000
